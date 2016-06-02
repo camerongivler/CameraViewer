@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+	<title>Camera Viewer</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script type="text/javascript" src="javascript.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<div></div>
+	<textarea id="num1"></textarea>
+	<textarea id="num2"></textarea>
+	<button id="add">Add</button>
+	<button id="mult">Multiply</button>
+	<textarea id="soln" readonly></textarea>
+</body>
+</html>

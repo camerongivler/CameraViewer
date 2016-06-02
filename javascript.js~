@@ -1,0 +1,17 @@
+$(document).ready(function() {
+
+	var socket = io.connect();
+		socket.on('connect', function() {
+			socket.on('message', function(message) {
+				$('soln').val(message);
+			});
+		});
+
+	socket.on('soln', function(message) {
+		$('#soln').val(message);
+	});
+
+	$('#add').click(function(){
+		socket.emit('addC', {'num1': parseInt($('#num1').val()), 'num2':parseInt($('#num2').val())});
+	});
+});

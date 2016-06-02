@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Camera Viewer</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/jquery.hammer.min.js"></script>
+        <!--        <script src="/socket.io/socket.io.js"></script> -->
+        <script type="text/javascript" src="javascript.js"></script>
+    </head>
+    <body>
+        <video id="background" preload="auto" poster="Play.png" loop>
+            <source src="video.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
+            <source src="video.webm" type='video/webm; codecs="vp8.0, vorbis"'/>
+            <source src="video.ogg" type='video/ogg; codecs="theora, vorbis"'/>
+            <p>HTML5 Video not supported</p>
+        </video>
+        <img id="fPos" class="pos" src="Focus.png"/>
+        <img id="ePos" class="pos" src="Exposure.png"/>
+        <img id="shutter" src="shutter.png"/>
+        <video id="thumb" preload="auto" poster="Play.png" loop>
+            <source src="video.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
+            <source src="video.webm" type='video/webm; codecs="vp8.0, vorbis"'/>
+            <source src="video.ogg" type='video/ogg; codecs="theora, vorbis"'/>
+            <p>HTML5 Video not supported</p>
+        </video>
+        <div id="disp"></div>
+        <div id="Next">></div>
+        <div id="Prev"><</div>
+        <div id="zSlide1"></div>
+        <div id="zSlide2"></div>
+        <div id="zSlider">Z</div>
+        <div id="exposure" class="ef">Exposure<br>
+            <div id="eText">Auto</div>
+            <div id="ePull" class="pull">||</div>
+            <img id="eSlide" class="slide" src="RSlider.png"/>
+            <img id="eSlider" class="slider" src="ESlider.png"/>
+        </div>
+        <div id="focus" class="ef">Focus<br>
+            <div id="fText">Auto</div>
+            <div id="fPull" class="pull">||</div>
+            <img id="fSlide" class="slide" src="LSlider.png"/>
+            <img id="fSlider" class="slider" src="FSlider.png"/>
+        </div>
+        <div id="log"></div>
+    </body>
+</html>

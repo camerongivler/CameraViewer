@@ -1,0 +1,17 @@
+#include <node.h>
+#include <v8.h>
+
+using namespace v8;
+
+Handle<Value> Method(const Arguments& args) {
+  HandleScope scope;
+  Local<Number> num1 = Number::New(args[0]->NumberValue() + args[1]->NumberValue());
+  return scope.Close(num1);
+}
+
+void init(Handle<Object> exports) {
+  exports->Set(String::NewSymbol("add"),
+      FunctionTemplate::New(Method)->GetFunction());
+}
+
+NODE_MODULE(cppMod, init)
