@@ -1,5 +1,5 @@
 var http = require('http'), url = require('url'), fs = require('fs'),
-        sio = require('socket.io'), cppMod = require('./build/Release/cppMod');
+        sio = require('socket.io');//, cppMod = require('./build/Release/cppMod');
 
 var server = http.createServer(function(req, res) {
     var urlStr = url.parse(req.url).pathname;
@@ -24,6 +24,7 @@ io = sio.listen(server);
 
 io.sockets.on('connection', function(socket) {
     socket.on('slider', function(msg) {
-        socket.emit('slider', {val: cppMod.slider(msg.value)});
+        //socket.emit('slider', {val: cppMod.slider(msg.value)});
+        console.log(msg.value);
     });
 });
